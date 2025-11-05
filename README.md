@@ -67,30 +67,30 @@ The final system combines all three modalities through a **weighted late-fusion 
 
 ---
 
-## 🧠 System Architecture
+### 🧠 System Architecture
 
 ```mermaid
 graph TD
-A[EEG Data (.set)] --> B[EEG Feature Extractor]
-B --> C[Trained CatBoost Model]
+A[EEG Data - .set files] --> B[EEG Feature Extractor]
+B --> C[CatBoost EEG Model]
 C --> F[EEG Diagnosis]
 
-D[Video Response] --> E[Audio Extraction (FFmpeg)]
-E --> G[Audio Features (Librosa)]
-D --> H[Visual Features (DeepFace)]
-E --> I[Speech-to-Text (Google STT)]
-I --> J[Text Features (Linguistic Metrics)]
+D[Video Response] --> E[Audio Extraction - FFmpeg]
+E --> G[Audio Features - Librosa]
+D --> H[Visual Features - DeepFace]
+E --> I[Speech-to-Text - Google STT]
+I --> J[Text Features - Linguistic Metrics]
 
-G --> K[Behavioral Model]
+G --> K[Behavioral Model - RandomForest]
 H --> K
-J --> L[Text Model]
+J --> L[Text Model - RandomForest]
 K --> M[Behavioral Prediction]
 L --> N[Text Prediction]
 
 F --> O[Weighted Late Fusion]
 M --> O
 N --> O
-O --> P[Final Cognitive Diagnosis (Healthy / MCI / Dementia)]
+O --> P[Final Cognitive Diagnosis - Healthy / MCI / Dementia]
 ```
 
 ---
