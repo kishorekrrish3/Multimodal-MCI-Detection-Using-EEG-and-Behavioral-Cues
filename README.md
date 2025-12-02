@@ -209,8 +209,6 @@ pip install -r requirements.txt
 * Live transcription and emotional analysis
 * Final result visualization with probability bars
 
-![Streamlit Demo](https://github.com/yourusername/multimodal-mci-detection/assets/demo_ui.png)
-
 ---
 
 ## 📊 Results & Observations
